@@ -6,6 +6,9 @@
 //it is worked in principle of FIFO (first in first out)
 //Queue  is used to hold data's it is limiting the insertion at the end only
 // and the insertion at front only 
+
+
+
 class Node {
     public int data;
     public Node next;
