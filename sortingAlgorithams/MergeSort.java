@@ -1,4 +1,4 @@
-package sortingAlgorithams;
+
 public class MergeSort {
     public static void main(String[] args) {
         int[] arr = new int[] { 1, 5, 4, 32, 5, 6 };
@@ -28,7 +28,7 @@ public class MergeSort {
 
         while (i <= mid && j <= ub) {
 
-            if (arr[i] <= arr[j]) {
+            if (arr[i] >= arr[j]) {
                 b[k] = arr[i];
                 i++;
             } else {

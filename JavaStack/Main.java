@@ -1,28 +1,30 @@
-package JavaStack;
+
 
 //here iam going to a linked list
-class Node {
-    public int data;
-    public Node next;
 
+
+class Node <T> {
+    public int data;
+    public Node<T> next;
     Node(int data) {
         this.data = data;
         next = null;
     }
 }
 
-class LinkedListStack {
-    public Node top;
+class LinkedListStack <T> {
+    public Node<T> top;
     public int count;
 
     LinkedListStack() {
+        
         top = null;
         count = 0;
     }
 
     // "push" for adding a element int the stack "top"
     public void push(int data) {
-        Node node = new Node(data);
+        Node<T> node = new Node<T> (data);
 
         if (top == null) {
             top = node;
@@ -32,6 +34,33 @@ class LinkedListStack {
         }
         count++;
 
+    }
+    
+    public int  deleteMid(){
+
+        if (top == null) {
+        System.out.println("Stack is Empty");
+        return -1;
+        }
+       if(count == 1){
+        int data = top.data;
+        top = null;
+        count--;
+        return data;
+       }
+       
+       Node<T> slow = top;
+       Node<T> fast = top;
+       Node <T> prev = null;
+       while(fast != null && fast.next != null){
+         prev = slow;
+         slow = slow.next;
+         fast = fast.next.next;
+       }
+       prev.next = slow.next;
+       count--;
+
+    return slow.data;
     }
 
     // function for printing elements in linked list
@@ -45,7 +74,7 @@ class LinkedListStack {
             }
 
         }
-        Node temp = top;
+        Node<T> temp = top;
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
@@ -67,7 +96,7 @@ class LinkedListStack {
             }
         }
         int pop = top.data;
-        Node temp = top;
+        Node<T> temp = top;
         top = top.next;
         temp.next = null;
         count--;
@@ -98,7 +127,7 @@ class LinkedListStack {
                 e.printStackTrace();
             }
         } else {
-            Node temp = top;
+            Node<T> temp = top;
             while (temp != null) {
                 if (temp.data == data) {
                     return true;
@@ -124,12 +153,25 @@ class LinkedListStack {
         }
 
     }
+
+    
 }
 
 public class Main {
     public static void main(String[] args) {
-        LinkedListStack l = new LinkedListStack();
-        // pop
+        LinkedListStack<Integer> l = new LinkedListStack<>();
+        l.push(0);
+        l.push(1);
+        l.push(2);
+        l.push(3);
+        l.push(4);
+        l.push(5);
+        l.push(6);
+        System.out.println("  ------------------   :  "+l.deleteMid());
+        l.print();
+        // System.out.println("    :  "+l.pop());
+        // System.out.println("    :  "+l.pop());
+        
         // push
         // contain
         // print

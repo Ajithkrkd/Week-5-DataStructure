@@ -1,4 +1,4 @@
-package sortingAlgorithams;
+
 import java.util.Arrays;
 
 public class insertionSort {

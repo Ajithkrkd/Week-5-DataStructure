@@ -1,4 +1,4 @@
-package sortingAlgorithams;
+
 
 
 public class bubbleSort {
@@ -7,13 +7,13 @@ public class bubbleSort {
         
         int [] sortedarray = bubblesort(arr);
         for(int i : sortedarray){
-            System.out.println(i);
+            System.out.print(i+ " ");
         }
     }
     public static int []  bubblesort(int [] arr) {
         boolean isSwapped = true;
          while(isSwapped){
-             isSwapped = false;
+             isSwapped = false;                                                                     
                for(int j = 0; j < arr.length-1; j++){
                 if(arr[j] > arr[j+1]){
                     isSwapped = true;

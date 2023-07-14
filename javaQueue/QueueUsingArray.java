@@ -6,7 +6,7 @@ class QueueArray {
     private int capacity;
     public int count;
     int[] arr;
-
+    
     QueueArray() {
         front = rear = -1;
         capacity = 4;
@@ -72,6 +72,21 @@ class QueueArray {
 public class QueueUsingArray {
     public static void main(String[] args) {
         QueueArray l = new QueueArray();
+        l.enqueue(1);
+        l.enqueue(2);
+        l.enqueue(3);
+        l.enqueue(4);
+        l.enqueue(5);
+        l.enqueue(6);
+        l.enqueue(7);
+        l.enqueue(8);
+        l.enqueue(9);
+        l.enqueue(10);
+        l.enqueue(11);
+        l.enqueue(11);
+        l.dequeue();
+        l.dequeue();
+        l.print();
 
     }
 }

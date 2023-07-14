@@ -1,4 +1,4 @@
-package JavaStack;
+
 
 // I created a stack class for stack implimantation a stack ,
 
@@ -102,6 +102,20 @@ public class StackImplimatation<T> {
             System.out.println("cleared");
         }
     }
+    public T midileElement(){
+        T mid = arr[count/2];
+        return mid;
+    }
+    public void deleteMid(){
+        int mid = (top +1)/2;
+        for(int i = mid; i <= top; i++){
+            arr[i] = arr[i+1];
+        }
+        top--;
+        count--;
+
+    }
+
 
     // This function for Printing elements in stack i Want print first "top" so
     // starting the loop from "top"
@@ -113,9 +127,16 @@ public class StackImplimatation<T> {
     }
 
     public static void main(String[] args) {
-        StackImplimatation<Integer> l = new StackImplimatation();
+        StackImplimatation<String> l = new StackImplimatation();
         // here i use Integer Wrapper class for perform action in Integers
         // you Can Use String for perform Action in String
+       
+        l.push("ajith");
+        l.push("jithu");
+        l.push("ajith");
+        System.out.println("=---------------------- : "+l.midileElement());
+        l.print();
+        
 
     }
 
